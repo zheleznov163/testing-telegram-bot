@@ -1,7 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api");
 require("dotenv").config();
 
-const webAppURL = "https://ya.ru";
+const webAppURL = "https://capable-salmiakki-ae37e1.netlify.app/";
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
@@ -45,7 +45,8 @@ bot.on("message", async ({ chat, from, text }) => {
             {
                 reply_markup: {
                     keyboard: [
-                        [{ text: "1.1" }, { text: "1.2" }],
+                        [{ text: "сайт", web_app: { url: webAppURL } }],
+                        [({ text: "1.1" }, { text: "1.2" })],
                         [{ text: "2.1" }, { text: "2.2" }],
                     ],
                 },
